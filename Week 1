@@ -1,0 +1,9 @@
+#!/bin/bash
+for i in 'A_B-C_D' '1_2-3_4' 'aa_bb-cc_dd'; do
+   echo $i|sed -e 's/\(.*\)_.*-.*_.*/\1/g'
+   echo $i|sed -e 's/.*_\(.*\)-.*_.*/\1/g'
+   echo $i|sed -e 's/.*_\(.*-.*\)_.*/\1/g'
+   echo $i|sed -e 's/.*_.*-.*_\(.*\)/\1/g'
+   echo foo-`echo $i|sed -e 's/\(.*_.*\)-.*_.*/\1/g'`
+   echo ''
+done;
